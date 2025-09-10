@@ -1,0 +1,302 @@
+/* home.component.css */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #17202A;
+    color: #F7F9F9;
+    padding: 100px 0 50px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.brand {
+    color: #e3bcb7;
+    padding-bottom: 20px;
+    /* width: 200px; */
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.intro-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.greeting {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.name {
+    color: #de6558;
+}
+
+.title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #F7F9F9;
+}
+
+.tech-stack {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ccc;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    color: #ddd;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #641E16;
+    color: #F7F9F9;
+}
+
+.btn-primary:hover {
+    background-color: #8B2A22;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #F7F9F9;
+    border: 2px solid #641E16;
+}
+
+.btn-secondary:hover {
+    background-color: #641E16;
+    transform: translateY(-2px);
+}
+
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.profile-placeholder {
+    width: 300px;
+    height: 300px;
+    /* background-color: #641E16; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(100, 30, 22, 0.3);
+}
+
+.profile-placeholder i {
+    font-size: 8rem;
+    color: #F7F9F9;
+}
+
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(100, 30, 22, 0.2);
+    z-index: 1;
+}
+
+.circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 0;
+    right: 0;
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.circle-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 30px;
+    left: 0;
+    animation: pulse 5s infinite ease-in-out;
+}
+
+.circle-3 {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: 40px;
+    animation: pulse 3.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid;
+    width: 5px;
+    animation: typing 15s steps(30, end) forwards, blink 0.8s step-end;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 40ch;
+    }
+    /* 16 characters, adjust as needed */
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive design */
+
+@media screen and (max-width: 968px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+    .intro-text {
+        max-width: 100%;
+    }
+    .intro-text h3 {
+        padding-top: 20px;
+    }
+    .greeting {
+        font-size: 2.5rem;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
+    .image-container {
+        width: 280px;
+        height: 280px;
+    }
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    .profile-placeholder img {
+        width: 250px;
+        height: 250px;
+    }
+    .profile-placeholder i {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home {
+        padding: 80px 0 40px;
+    }
+    .greeting {
+        font-size: 2rem;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .image-container {
+        padding-top: 20px;
+        width: 220px;
+        height: 220px;
+    }
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    .profile-placeholder i {
+        font-size: 4.5rem;
+    }
+    .circle-1 {
+        width: 80px;
+        height: 80px;
+    }
+    .circle-2 {
+        width: 60px;
+        height: 60px;
+    }
+    .circle-3 {
+        width: 40px;
+        height: 40px;
+    }
+}

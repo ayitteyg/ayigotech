@@ -1,0 +1,211 @@
+<!-- resume.component.html -->
+<section id="resume" class="resume">
+    <div class="container">
+        <!-- Back Button -->
+        <div class="back-button">
+            <a routerLink="/" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+
+        <!-- Header Section -->
+        <div class="resume-header" data-aos="fade-up">
+            <h1 class="resume-title">Resume</h1>
+            <p class="resume-subtitle">My education, experience, and certifications</p>
+
+            <div class="download-container">
+                <a href="#" class="download-btn" (click)="downloadCV()">
+                    <i class="fas fa-download"></i> Download Full CV (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="resume-content">
+            <!-- Education Timeline -->
+            <div class="timeline-section" data-aos="fade-right">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Full Stack Web Development</h3>
+                            <p class="timeline-institution">Open Labs</p>
+                            <p class="timeline-date">2025</p>
+                            <p class="timeline-description">
+                                Intensive program covering modern web technologies including Django, Angular, Ionic and database management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Python Developer, Complete Course</h3>
+                            <p class="timeline-institution">Udemy Online</p>
+                            <p class="timeline-date">2022</p>
+                            <p class="timeline-description">
+                                Comprehensive Python programming course covering fundamentals, advanced concepts, and practical application development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Statistics for Data Analysis using python</h3>
+                            <p class="timeline-institution">Online Course (Udemy)</p>
+                            <p class="timeline-date">2021</p>
+                            <p class="timeline-description">
+                                Data analysis and statistical mastery using Python's powerful libraries for real-world insights and decision-making.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Master of Business Administration - MBA</h3>
+                            <p class="timeline-institution">GIMPA</p>
+                            <p class="timeline-date">2021</p>
+                            <p class="timeline-description">
+                                A postgraduate program focused on advanced business management, leadership, and strategic decision-making.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience Timeline -->
+            <div class="timeline-section" data-aos="fade-left">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i> Work Experience
+                </h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Full Stack Developer</h3>
+                            <p class="timeline-institution">Personal Project</p>
+                            <p class="timeline-date">2022 - Present</p>
+                            <p class="timeline-description">
+                                Developed and maintained web applications using Django and Angular. Implemented RESTful APIs and managed database architecture.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Django</li>
+                                <li>Angular</li>
+                                <li>PostgreSQL</li>
+                                <li>Render</li>
+                                <li>Neon</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Backend Developer</h3>
+                            <p class="timeline-institution">Innovation Labs</p>
+                            <p class="timeline-date">2025</p>
+                            <p class="timeline-description">
+                                Assisted in developing and integrating the backend architecture for the CONEXIO PROJECT. Gained experience in remote and team work.
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>Git</li>
+                                <li>Render / Neon</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Site Manager</h3>
+                            <p class="timeline-institution">Shalom Oil Limited</p>
+                            <p class="timeline-date">7yrs + </p>
+                            <p class="timeline-description">
+                                Analyze sales and performance trend and make informed decision (Excel / Python). Track, Record, Prepare and submit periodic sales and performance reports
+
+                            </p>
+                            <ul class="timeline-skills">
+                                <li>Problem Solving</li>
+                                <li>Communication</li>
+                                <li>Team Work & Dynamics</li>
+                                <li>Multitask</li>
+                                <li>Analytical</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications-section" data-aos="fade-up">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i> Certifications / Awards
+                </h2>
+
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fab fa-angular"></i>
+                        </div>
+                        <h3 class="certification-title">Full Stack Developer</h3>
+                        <p class="certification-issuer">Open Larbs</p>
+                        <p class="certification-date">2025</p>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h3 class="certification-title">Python Developer Certification</h3>
+                        <p class="certification-issuer">Udemy</p>
+                        <p class="certification-date">2021</p>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fa fa-database"></i>
+                        </div>
+                        <h3 class="certification-title">Statistics for Data Analysis</h3>
+                        <p class="certification-issuer">Udemy</p>
+                        <p class="certification-date">2021</p>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="certification-title">Silver Super Star Award </h3>
+                        <p class="certification-issuer">Shalom Oil Ltd</p>
+                        <p class="certification-date">2016</p>
+                    </div>
+
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="certification-title">Tech Quiz (Medal of Participation)</h3>
+                        <p class="certification-issuer">Open Labs</p>
+                        <p class="certification-date">2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Download Button -->
+        <div class="download-bottom" data-aos="fade-up">
+            <a href="#" class="download-btn large" (click)="downloadCV()">
+                <i class="fas fa-download"></i> Download Full CV (PDF)
+            </a>
+        </div>
+    </div>
+</section>

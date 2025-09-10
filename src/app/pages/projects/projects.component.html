@@ -1,0 +1,206 @@
+<!-- projects.component.html -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Here are some of my recent projects that showcase my skills and expertise
+        </p>
+
+
+
+        <div class="projects-grid">
+
+            <!-- 📱 Mobile Projects First -->
+            <div class="project-card featured" *ngFor="let project of mobileProjects; let i = index" data-aos="fade-up" [attr.data-aos-delay]="200 + (i * 100)">
+                <div class="project-badge">Featured</div>
+                <div class="project-image">
+                    <div class="mobile-showcase">
+                        <div class="mobile-frame">
+                            <img [src]="project.image" [alt]="project.title" class="mobile-screen">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <div class="project-tech">
+                        <span class="tech-badge" *ngFor="let tech of project.tech_stack">{{ tech }}</span>
+                    </div>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-actions">
+                        <a href="#" class="project-btn primary" (click)="openModal(i, $event)">
+                            <i class="fas fa-eye"></i> View Details
+                        </a>
+                        <a *ngIf="project.demo_link" [href]="project.demo_link" target="_blank" class="project-btn">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                        <a *ngIf="project.github_link" [href]="project.github_link" target="_blank" class="project-btn">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 💻 Web Projects Next -->
+            <div class="project-card" *ngFor="let project of webProjects; let i = index" data-aos="fade-up" [attr.data-aos-delay]="300 + (i * 100)">
+                <div class="project-image">
+                    <img [src]="project.image" [alt]="project.title" class="project-img">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <div class="project-tech">
+                        <span class="tech-badge" *ngFor="let tech of project.tech_stack">{{ tech }}</span>
+                    </div>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-actions">
+                        <a href="#" class="project-btn primary" (click)="openModal(i, $event)">
+                            <i class="fas fa-eye"></i> Details
+                        </a>
+                        <a *ngIf="project.demo_link" [href]="project.demo_link" target="_blank" class="project-btn">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                        <a *ngIf="project.github_link" [href]="project.github_link" target="_blank" class="project-btn">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</section>
+
+<!-- Project Modal -->
+<div class="modal" [class.active]="isModalOpen">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+
+        <div class="modal-body" *ngIf="selectedProject">
+            <!-- Mobile Project Modal -->
+            <div class="modal-project-details" *ngIf="selectedProject.featured">
+                <div class="modal-header">
+                    <h2 class="modal-title">{{ selectedProject.title }}</h2>
+                    <div class="modal-tech">
+                        <span class="tech-badge" *ngFor="let tech of selectedProject.tech">{{ tech }}</span>
+                    </div>
+                </div>
+
+
+
+
+                <div class="mobile-modal-content">
+                    <div class="mobile-screens-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-slide" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+                                <div class="carousel-item" *ngFor="let screen of selectedProject.screenshots; let i = index">
+                                    <div class="mobile-frame">
+                                        <img [src]="screen.image" alt="Mobile screen {{ i+1 }}" class="mobile-screen">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" (click)="prevSlide(selectedProject)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                            <div class="carousel-dots">
+                                <span *ngFor="let screen of selectedProject.screenshots; let i = index" [class.active]="i === currentSlide" (click)="goToSlide(i)">
+                            </span>
+                            </div>
+                            <button class="carousel-btn" (click)="nextSlide(selectedProject)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        </div>
+                    </div>
+
+                    <div class="mobile-modal-info">
+                        <div class="project-links">
+                            <a *ngIf="selectedProject.demo_link" [href]="selectedProject.demo_link" target="_blank" class="download-btn">
+                                <i class="fas fa-download"></i> Download APK
+                            </a>
+                            <a *ngIf="selectedProject.store_link" [href]="selectedProject.store_link" target="_blank" class="store-btn">
+                                <i class="fab fa-google-play"></i> Google Play
+                            </a>
+                            <a [href]="selectedProject.github_link" target="_blank" class="github-btn">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+
+                        <div class="project-breakdown">
+                            <div class="breakdown-section">
+                                <h3><i class="fas fa-exclamation-circle"></i> Problem</h3>
+                                <p>{{ selectedProject.problem }}</p>
+                            </div>
+
+                            <div class="breakdown-section">
+                                <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+                                <p>{{ selectedProject.solution }}</p>
+                            </div>
+
+                            <div class="breakdown-section">
+                                <h3><i class="fas fa-chart-line"></i> Outcome</h3>
+                                <p>{{ selectedProject.outcome }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Standard Project Modal -->
+            <div class="modal-project-details" *ngIf="!selectedProject.featured">
+                <div class="modal-header">
+                    <h2 class="modal-title">{{ selectedProject.title }}</h2>
+                    <div class="modal-tech">
+                        <span class="tech-badge" *ngFor="let tech of selectedProject.tech">{{ tech }}</span>
+                    </div>
+                </div>
+
+                <div class="modal-image">
+                    <img [src]="selectedProject.image" alt="Project screenshot" class="modal-img">
+                </div>
+
+                <div class="project-breakdown">
+                    <div class="breakdown-section">
+                        <h3><i class="fas fa-exclamation-circle"></i> Problem</h3>
+                        <p>{{ selectedProject.problem }}</p>
+                        <!-- <p>Businesses struggled with inefficient task management and team collaboration across different departments.</p> -->
+                    </div>
+
+                    <div class="breakdown-section">
+                        <h3><i class="fas fa-lightbulb"></i> Solution</h3>
+                        <p>{{ selectedProject.solution }}</p>
+                        <!-- <p>Created a full-stack application with Angular frontend, Django REST API, and PostgreSQL database for reliable task management.</p> -->
+                    </div>
+
+                    <div class="breakdown-section">
+                        <h3><i class="fas fa-chart-line"></i> Outcome</h3>
+                        <p>{{ selectedProject.outcome }}</p>
+                        <!-- <p>Increased team productivity by 40% and reduced task completion time by streamlining collaboration processes.</p> -->
+                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="project-link live-demo">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="#" class="project-link github">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<!-- home.component.html -->
+<section id="home" class="home">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="intro-text">
+                <h3 routerLink="/" class="brand  typing-animations">{{displayedText}}</h3>
+                <h1 class="greeting">Hi, I'm <span class="name">Odame</span></h1>
+                <h2 class="title">Backend & Fullstack Developer</h2>
+                <p class="tech-stack">Django • Angular • Ionic</p>
+                <p class="description">I build scalable web applications and robust backend systems with clean, efficient code. Currently looking for remote opportunities.</p>
+
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary" (click)="scrollToSection('projects', $event)">
+                        View My Projects
+                    </a>
+                    <a routerLink="/resume" class="btn btn-secondary">
+                        View Resume
+                    </a>
+
+                    <!-- <a href="#resume" class="btn btn-primary" (click)="scrollToSection('resume', $event)"> -->
+                    <a href="#" class="btn btn-secondary" (click)="downloadCV($event)">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-image" data-aos="zoom-in-up" data-aos-duration="3000">
+                <div class="image-container">
+                    <div class="profile-placeholder">
+                        <img src="img.png" alt="" width="300px" height="300px">
+                        <!-- <i class="fas fa-user"></i> -->
+                    </div>
+                    <div class="decoration-circle circle-1"></div>
+                    <div class="decoration-circle circle-2"></div>
+                    <div class="decoration-circle circle-3"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

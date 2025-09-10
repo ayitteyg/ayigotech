@@ -1,0 +1,47 @@
+<!-- footer.component.html -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ siteName }}</h3>
+                <p>A passionate developer who builds with business in mind. Open to remote opportunities.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/george-odame-487a85267/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ayitteyg" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:sbas.og@gmail.com" aria-label="Email" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home" (click)="smoothScroll('home', $event)">Home</a></li>
+                    <li><a href="#projects" (click)="smoothScroll('projects', $event)">Projects</a></li>
+                    <li><a href="#skills" (click)="smoothScroll('skills', $event)">Skills</a></li>
+                    <li><a href="#about" (click)="smoothScroll('about', $event)">About</a></li>
+                    <li><a href="#contact" (click)="smoothScroll('contact', $event)">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i>sbas.oa&#64;gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +(233) 549 053 295</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Available Remotely</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; {{ currentYear }} {{ siteName }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

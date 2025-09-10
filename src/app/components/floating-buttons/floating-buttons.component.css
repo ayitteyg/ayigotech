@@ -1,0 +1,106 @@
+.floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    /* WhatsApp green */
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    /* Darker WhatsApp green */
+}
+
+.scroll-top-btn {
+    background-color: #641E16;
+    /* Your brand color */
+    color: #F7F9F9;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background-color: #8B2A22;
+    /* Lighter shade of your brand color */
+}
+
+
+/* Animation for the buttons */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.floating-btn:hover {
+    animation: pulse 1s infinite;
+}
+
+
+/* Responsive design */
+
+@media screen and (max-width: 768px) {
+    .floating-buttons {
+        bottom: 20px;
+        right: 20px;
+    }
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+    }
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}

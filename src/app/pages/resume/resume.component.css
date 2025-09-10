@@ -1,0 +1,306 @@
+/* resume.component.css */
+
+.resume {
+    padding: 100px 0 50px;
+    min-height: 100vh;
+    background-color: #F7F9F9;
+    color: #17202A;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.back-button {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #641E16;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #8B2A22;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.resume-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #17202A;
+}
+
+.resume-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.download-container {
+    margin-top: 1.5rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #641E16;
+    color: #F7F9F9;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #8B2A22;
+    transform: translateY(-2px);
+}
+
+.download-btn.large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.resume-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.timeline-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #17202A;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #641E16;
+}
+
+.section-title i {
+    color: #641E16;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #641E16;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #641E16;
+    border: 3px solid #F7F9F9;
+    box-shadow: 0 0 0 3px #641E16;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #17202A;
+}
+
+.timeline-institution {
+    font-weight: 600;
+    color: #641E16;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.timeline-description {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-skills li {
+    background-color: #17202A;
+    color: #F7F9F9;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.certifications-section {
+    margin-top: 2rem;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.certification-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.certification-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #641E16;
+    color: #F7F9F9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+}
+
+.certification-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #17202A;
+}
+
+.certification-issuer {
+    font-weight: 600;
+    color: #641E16;
+    margin-bottom: 0.3rem;
+}
+
+.certification-date {
+    color: #666;
+    font-style: italic;
+}
+
+.download-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .resume {
+        padding: 80px 0 30px;
+    }
+    .resume-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    .timeline::before {
+        left: 5px;
+    }
+    .timeline-marker {
+        left: -1.5rem;
+    }
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .resume-title {
+        font-size: 1.8rem;
+    }
+    .timeline-content {
+        padding: 1rem;
+    }
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+    .download-btn {
+        padding: 0.7rem 1.2rem;
+    }
+    .download-btn.large {
+        padding: 0.8rem 1.5rem;
+    }
+}

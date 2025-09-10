@@ -1,0 +1,34 @@
+<!-- navbar.component.html -->
+<nav class="navbar  shadow" [class.scrolled]="isScrolled">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <!-- <a href="#home" (click)="smoothScroll('home', $event)">{{ siteName }}</a> -->
+        </div>
+
+        <div class="nav-menu" [class.active]="isMenuOpen">
+            <div class="nav-item">
+                <!-- <a routerLink="/" class="nav-link">Home</a> -->
+                <a href="#home" (click)="smoothScroll('home', $event)" class="nav-link">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="#projects" (click)="smoothScroll('projects', $event)" class="nav-link">Projects</a>
+            </div>
+            <div class="nav-item">
+                <a href="#skills" (click)="smoothScroll('skills', $event)" class="nav-link">Skills</a>
+            </div>
+            <div class="nav-item">
+                <a href="#about" (click)="smoothScroll('about', $event)" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <!-- <a routerLink="/" class="nav-link">Contact</a> -->
+                <a href="#contact" (click)="smoothScroll('contact', $event)" class="nav-link">Contact</a>
+            </div>
+        </div>
+
+        <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
