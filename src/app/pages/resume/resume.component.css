@@ -304,3 +304,24 @@
         padding: 0.8rem 1.5rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .resume-title {
+        font-size: 1.5rem;
+    }
+    .timeline-content {
+        padding: 0.6rem;
+    }
+    .timeline-title {
+        font-size: 1.0rem;
+    }
+    .download-btn {
+        padding: 0.6rem 1.0rem;
+    }
+    .download-btn.large {
+        padding: 0.6rem 1.2rem;
+    }
+}
