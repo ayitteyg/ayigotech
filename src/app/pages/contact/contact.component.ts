@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService, ContactMessage } from '../../services/api.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +16,15 @@ export class ContactComponent{
   isSubmitting = false;
   submitMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  successMessage = '';
+  errorMessage = '';
+
+  constructor(private fb: FormBuilder,
+    private apiService:ApiService,
+    private notification: NotificationService,
+    
+    
+    ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -22,7 +32,7 @@ export class ContactComponent{
     });
   }
 
-  onSubmit(): void {
+  onSubmit2(): void {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
       
@@ -42,6 +52,34 @@ export class ContactComponent{
       }, 1500);
     }
   }
+
+
+
+   onSubmit(): void {
+    if (this.contactForm.valid) {
+      this.isSubmitting = true;
+      this.successMessage = '';
+      this.errorMessage = '';
+
+      const payload: ContactMessage = this.contactForm.value as ContactMessage;
+
+      this.apiService.sendContactMessage(payload).subscribe({
+        next: (response) => {
+          this.notification.success('Message sent successfully!');
+          this.successMessage = 'Message sent successfully!';
+          this.contactForm.reset();
+          this.isSubmitting = false;
+        },
+        error: (err) => {
+          console.error(err);
+           this.notification.error('Failed to send message. Please try again.');
+          this.errorMessage = 'Failed to send message. Please try again.';
+          this.isSubmitting = false;
+        }
+      });
+    }
+  }
+
 
   handleSuccess(response: any): void {
     this.isSubmitting = false;

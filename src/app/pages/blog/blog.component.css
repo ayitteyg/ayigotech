@@ -1,0 +1,124 @@
+/* Skills Section Styles */
+
+.skills-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #17202A;
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    padding: 30px;
+    border-top: 4px solid #641E16;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    font-size: 1.4rem;
+    color: #17202A;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.skill-list {
+    list-style-type: none;
+}
+
+.skill-list li {
+    padding: 8px 0;
+    color: #666;
+    position: relative;
+    padding-left: 20px;
+    transition: all 0.2s ease;
+}
+
+.skill-list li:hover {
+    color: #641E16;
+}
+
+.skill-list li:before {
+    content: "•";
+    color: #641E16;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.2rem;
+}
+
+.back-button {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #641E16;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #8B2A22;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+    .skill-category {
+        padding: 25px;
+    }
+}

@@ -27,6 +27,12 @@ export interface Project {
 }
 
 
+export interface ContactMessage {
+  name: string;
+  email: string;
+  message: string;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -34,11 +40,18 @@ export interface Project {
 
 
 export class ApiService {
-  private baseUrl = environment.apiUrl;  // 🔹 adjust if backend is hosted elsewhere
+  private baseUrl = environment.apiUrl;  // 
 
   constructor(private http: HttpClient) {}
 
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(`${this.baseUrl}/api/projects/`);
   }
+
+
+  sendContactMessage(data: ContactMessage): Observable<any> {
+    return this.http.post(`${this.baseUrl}/api/contact/`, data);
+  }
+
+
 }
