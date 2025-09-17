@@ -116,9 +116,12 @@
         grid-template-columns: 1fr;
     }
     .section-header h2 {
-        font-size: 1.3rem;
+        font-size: 14px;
     }
     .skill-category {
         padding: 25px;
+    }
+    .skill-list li {
+        font-size: 13px;
     }
 }

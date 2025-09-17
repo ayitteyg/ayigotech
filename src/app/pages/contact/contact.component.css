@@ -275,7 +275,7 @@
         padding: 2.5rem 0;
     }
     .section-title {
-        font-size: 1.2rem;
+        font-size: 13px;
     }
     .contact-form-container {
         padding: 1.2rem;
@@ -288,5 +288,16 @@
         flex-direction: row;
         gap: 0.5rem;
         justify-content: center;
+        font-size: 12px;
+    }
+    .form-group {
+        margin-bottom: 1.0rem;
+    }
+    .form-group label {
+        font-weight: 100;
+        font-size: 13px;
+    }
+    .form-group input {
+        font-size: 12px;
     }
 }
