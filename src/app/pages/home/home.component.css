@@ -310,4 +310,9 @@
         flex: 1;
         text-align: start;
     }
+    .intro-text p,
+    h1,
+    h2 {
+        font-size: 13px;
+    }
 }

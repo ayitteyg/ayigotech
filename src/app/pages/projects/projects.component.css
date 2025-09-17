@@ -472,8 +472,17 @@
         width: 250px;
     }
     .mobile-frame {
-        width: 180px;
-        height: 360px;
+        width: 150px;
+        height: 300px;
+    }
+    .modal-title {
+        font-size: 14px;
+    }
+    .project-breakdown p {
+        font-size: 13px;
+    }
+    .project-breakdown h3 {
+        font-size: 14px;
     }
 }
 
@@ -494,7 +503,7 @@
         padding: 1rem;
     }
     .modal-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .project-img {
         width: 100%;

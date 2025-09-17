@@ -324,4 +324,13 @@
     .download-btn.large {
         padding: 0.6rem 1.2rem;
     }
+    .timeline-content h3 {
+        font-size: 14px;
+    }
+    .timeline-content p {
+        font-size: 13px;
+    }
+    .resume-header p {
+        font-size: 14px;
+    }
 }
