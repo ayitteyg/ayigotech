@@ -17,11 +17,12 @@ export class ProjectsComponent {
   currentSlide: number = 0;  // carousel control
   mobileProjects: any[] = [];
   webProjects: any[] = [];
-
+  loadingProjects = true;
   constructor(private apiService: ApiService) {}
 
   
   ngOnInit(): void {
+  this.loadingProjects = true
   this.apiService.getProjects().subscribe({
     next: (data) => {
       this.projects = data;
@@ -30,12 +31,15 @@ export class ProjectsComponent {
       this.mobileProjects = this.projects.filter(p => p.is_mobile_app);
       this.webProjects = this.projects.filter(p => !p.is_mobile_app);
 
+      this.loadingProjects = false
+
       console.log("All Projects:", this.projects);
       console.log("Mobile Projects:", this.mobileProjects);
       console.log("Web Projects:", this.webProjects);
     },
     error: (err) => {
       console.log(err, 'could not fetch data');
+        this.loadingProjects = false
     }
   });
 }
