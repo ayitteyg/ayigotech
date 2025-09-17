@@ -484,11 +484,17 @@
     .project-breakdown h3 {
         font-size: 14px;
     }
+    .section-title h2 {
+        font-size: 15px;
+    }
+    .section-title p {
+        font-size: 13px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .section-title {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
     .projects-grid {
         grid-template-columns: 1fr;
