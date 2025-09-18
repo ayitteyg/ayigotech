@@ -11,16 +11,20 @@ export class SkillsComponent {
 
 
   projectCount: number = 0;
+  loadingProjects = true
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
+     this.loadingProjects = true
     this.apiService.getProjects().subscribe({
       next: (projects) => {
         this.projectCount = projects.length;
+        this.loadingProjects = false
       },
       error: (err) => {
         console.error('Error fetching project count:', err);
+        this.loadingProjects = false
       }
     });
   }
