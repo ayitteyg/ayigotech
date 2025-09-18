@@ -490,6 +490,11 @@
     .section-title p {
         font-size: 13px;
     }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 @media screen and (max-width: 480px) {
