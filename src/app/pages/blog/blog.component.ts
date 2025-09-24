@@ -8,4 +8,35 @@ import { Component } from '@angular/core';
 })
 export class BlogComponent {
 
+   isMenuOpen = false;
+
+
+    smoothScroll(target: string, event: Event): void {
+    event.preventDefault();
+    this.isMenuOpen = false;
+    
+    const element = document.getElementById(target);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+
+  
+  scrollToSection(section: string, event: Event): void {
+    event.preventDefault();
+    const element = document.getElementById(section);
+    if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }
+
 }
