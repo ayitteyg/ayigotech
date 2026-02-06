@@ -6,6 +6,38 @@
     color: #17202A;
 }
 
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.profile-placeholder {
+    width: 300px;
+    height: 300px;
+    /* background-color: #641E16; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(100, 30, 22, 0.3);
+}
+
+.profile-placeholder i {
+    font-size: 8rem;
+    color: #F7F9F9;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -41,6 +73,29 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.pwa-image {
+    height: 200px;
+    /* margin: auto; */
+    text-align: center;
+    /* background: #641E16; */
+    vertical-align: middle;
+    align-content: center;
+}
+
+.pwa-image a {
+    padding: 25px;
+    border-radius: 10%;
+    border: 1px solid rgba(239, 61, 61, 0.381);
+    font-size: 20px;
+    text-decoration: none;
+    font: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.pwa-image a:hover {
+    color: #8B2A22;
 }
 
 .projects-grid {
